@@ -9,7 +9,15 @@ import ThemeToggler from './ThemeToggler';
 const styles = {
   logoStyle: {
     width: 50,
-    height: 40,
+    height: 50,
+    borderRadius: '50%', // Makes the logo circular
+    objectFit: 'cover',
+    marginLeft: 0, // Remove any left margin
+    marginRight: 10, // Add some space to the right of the logo
+  },
+  brandStyle: {
+    paddingLeft: 0, // Remove left padding
+    marginLeft: 0, // Remove left margin
   },
 };
 
@@ -54,9 +62,8 @@ const NavBar = () => {
     <Navbar
       fixed="top"
       expand="md"
-      bg="dark"
-      variant="dark"
-      className="navbar-custom"
+      variant={theme.bsPrimaryVariant}
+      style={{ backgroundColor: theme.background }} // Set background color to match the theme
       expanded={expanded}
     >
       <Container>
@@ -66,12 +73,22 @@ const NavBar = () => {
               src={data?.logo?.source}
               className="d-inline-block align-top"
               alt="main logo"
-              style={
-                data?.logo?.height && data?.logo?.width
-                  ? { height: data?.logo?.height, width: data?.logo?.width }
-                  : styles.logoStyle
-              }
+              style={styles.logoStyle}
             />
+          </Navbar.Brand>
+        )}
+        {data?.name?.name && (
+          <Navbar.Brand
+            className="navbar__link"
+            href="/"
+            style={
+              {
+                color: theme.navbarTheme.linkColor,
+                paddingLeft: 0,
+              }
+            } // Set the color to match the theme
+          >
+            <span>{data?.name?.name}</span>
           </Navbar.Brand>
         )}
         <Navbar.Toggle
@@ -81,8 +98,8 @@ const NavBar = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto" />
           <Nav>
-            {data
-              && data.sections?.map((section, index) => (section?.type === 'link' ? (
+            {data?.sections?.map((section, index) => (
+              section?.type === 'link' ? (
                 <ExternalNavLink
                   key={section.title}
                   href={section.href}
@@ -106,12 +123,13 @@ const NavBar = () => {
                 >
                   {section.title}
                 </InternalNavLink>
-              )))}
+              )
+            ))}
           </Nav>
-          <ThemeToggler
-            onClick={() => setExpanded(false)}
-          />
         </Navbar.Collapse>
+        <ThemeToggler
+          onClick={() => setExpanded(false)}
+        />
       </Container>
     </Navbar>
   );

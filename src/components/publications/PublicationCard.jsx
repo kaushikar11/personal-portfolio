@@ -40,7 +40,7 @@ const styles = {
     textDecoration: 'underline',
   },
   contributorsContainerStyle: {
-    textAlign: 'left', // Align content to the left
+    textAlign: 'left',
   },
   additionalInfoStyle: {
     fontSize: 16,
@@ -49,10 +49,10 @@ const styles = {
   },
 };
 
-const ProjectCard = (props) => {
+const PublicationCard = (props) => {
   const theme = useContext(ThemeContext);
-  const [isExpanded, setIsExpanded] = useState(false); // State for expanding text
-  const { project } = props;
+  const [isExpanded, setIsExpanded] = useState(false);
+  const { publication } = props;
 
   const parseBodyText = (text) => <ReactMarkdown children={text} />;
 
@@ -60,8 +60,8 @@ const ProjectCard = (props) => {
     setIsExpanded(!isExpanded);
   };
 
-  const MAX_LENGTH = 100; // Maximum number of characters to show before "Read More"
-  const shouldShowReadMore = project.bodyText.length > MAX_LENGTH;
+  const MAX_LENGTH = 100;
+  const shouldShowReadMore = publication.bodyText.length > MAX_LENGTH;
 
   return (
     <Col>
@@ -73,20 +73,20 @@ const ProjectCard = (props) => {
         }}
         text={theme.bsSecondaryVariant}
       >
-        <Card.Img variant="top" src={project?.image} />
+        <Card.Img variant="top" src={publication?.image} />
         <Card.Body>
-          <Card.Title style={styles.cardTitleStyle}>{project.title}</Card.Title>
-          {project.additionalInfo && (
+          <Card.Title style={styles.cardTitleStyle}>{publication.title}</Card.Title>
+          {publication.additionalInfo && (
             <div style={styles.additionalInfoStyle}>
-              {project.additionalInfo.map((info) => (
+              {publication.additionalInfo.map((info) => (
                 <div key={info}>{info}</div>
               ))}
             </div>
           )}
           <Card.Text style={styles.cardTextStyle}>
             {parseBodyText(isExpanded || !shouldShowReadMore
-              ? project.bodyText
-              : `${project.bodyText.substring(0, MAX_LENGTH)}...`)}
+              ? publication.bodyText
+              : `${publication.bodyText.substring(0, MAX_LENGTH)}...`)}
             {shouldShowReadMore && (
               <Button
                 variant="link"
@@ -97,9 +97,7 @@ const ProjectCard = (props) => {
               </Button>
             )}
           </Card.Text>
-        </Card.Body>
-        <Card.Body>
-          {project?.links?.map((link) => (
+          {publication?.links?.map((link) => (
             <Button
               key={link.href}
               style={styles.buttonStyle}
@@ -109,31 +107,31 @@ const ProjectCard = (props) => {
               {link.text}
             </Button>
           ))}
-
-          {project?.Contributers?.length > 0 && (
-            <div style={styles.contributorsContainerStyle}>
-              <p style={styles.contributorsHeaderStyle}>Contributors:</p>
-              <ul>
-                {project.Contributers.map((contributor) => (
-                  <li key={contributor.contactURL}>
-                    <a
-                      href={contributor.contactURL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={styles.contributorLinkStyle}
-                    >
-                      {contributor.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+          <div style={styles.contributorsContainerStyle}>
+            {publication['Co-authors'] && (
+              <>
+                <div style={styles.contributorsHeaderStyle}>Co-authors:</div>
+                <ul>
+                  {publication['Co-authors'].map((author) => (
+                    <li key={author}>
+                      <a
+                        href={author.contactURL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={styles.contributorLinkStyle}
+                      >
+                        {author.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
+          </div>
         </Card.Body>
-
-        {project.tags && (
+        {publication.tags && (
           <Card.Footer style={{ backgroundColor: theme.cardFooterBackground }}>
-            {project.tags.map((tag) => (
+            {publication.tags.map((tag) => (
               <Badge
                 key={tag}
                 pill
@@ -151,8 +149,8 @@ const ProjectCard = (props) => {
   );
 };
 
-ProjectCard.propTypes = {
-  project: PropTypes.shape({
+PublicationCard.propTypes = {
+  publication: PropTypes.shape({
     title: PropTypes.string.isRequired,
     bodyText: PropTypes.string.isRequired,
     image: PropTypes.string,
@@ -161,7 +159,7 @@ ProjectCard.propTypes = {
       href: PropTypes.string.isRequired,
     })),
     tags: PropTypes.arrayOf(PropTypes.string),
-    Contributers: PropTypes.arrayOf(PropTypes.shape({
+    'Co-authors': PropTypes.arrayOf(PropTypes.shape({
       name: PropTypes.string.isRequired,
       contactURL: PropTypes.string.isRequired,
     })),
@@ -169,4 +167,4 @@ ProjectCard.propTypes = {
   }).isRequired,
 };
 
-export default ProjectCard;
+export default PublicationCard;

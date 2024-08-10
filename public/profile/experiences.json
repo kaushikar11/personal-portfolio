@@ -1,33 +1,41 @@
 {
     "experiences": [
         {
-            "title": "Software Engineer",
-            "subtitle": "XYZ Ltd",
-            "workType": "Full-time",
+            "title": "Co-Founder & Product/Ai Engineer",
+            "imageUrl": "images/experiences/locallu-logo.png",
+            "url": "https://locallu.com/",
+            "subtitle": "Locallu",
+            "workType": "Self-Employed",
             "workDescription": [
-                "Integrated **2** new product.",
-                "Worked on adding **def** to **bcd**. Improved speed by 50%."
+                "Building the world's first multi-LLM interaction x human engine for a groundbreaking approach to AGI.",
+                "A multi ai x human agent model for freelance solutions"
             ],
-            "dateText": "06/20XX – Present"
+            "dateText": "02/2024 – Present"
+            
         },
         {
-            "title": "Software Engineer",
-            "subtitle": "XYZ Ltd",
+            "title": "Intern",
+            "subtitle": "pi42.com",
+            "imageUrl": "images/experiences/pi42.png",
+            "url":"https://pi42.com/",
             "workType": "Internship",
             "workDescription": [
-                "Worked on abc."
+                "Developed an e-commerce website - Tweeshirt",
+                "the application utilizes generative Ai to create images from user's tweets",
+                "prints the generated images in T-shirts and delivers it to their homes"
             ],
-            "dateText": "01/20XX – 05/20XX"
+            "dateText": "12/2023 – 01/2024"
         },
         {
-            "title": "App Developer",
-            "subtitle": "ABC Pvt Ltd",
-            "workType": "Freelance",
+            "title": "Intern",
+            "subtitle": "KaarTech",
+            "imageUrl": "images/experiences/kaar.png",
+            "url": "https://kaartech.com/",
+            "workType": "Internship",
             "workDescription": [
-                "Developed the official apps for the startup for both Android and iOS using hybrid framework.",
-                "Done bcd work."
+                "Analysing and predicting seasonal sales data."
             ],
-            "dateText": "09/20XX – 01/20YY"
+            "dateText": "06/2023"
         }
     ]
 }

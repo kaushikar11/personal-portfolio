@@ -8,7 +8,7 @@
 
 @media only screen and (max-width: 578px) {
     div.vertical-item-row > div:nth-child(1) {
-        width: 20% !important;
+        width: 200% !important;
     }
     div.vertical-item-row > div:nth-child(2) {
         width: 65% !important;
@@ -17,3 +17,10 @@
         width: 15% !important;
     }
 }
+
+/* education.css */
+.chrono-icon {
+    width: 1500px;  /* Adjust size as needed */
+    height: 1500px; /* Adjust size as needed */
+  }
+  

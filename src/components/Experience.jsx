@@ -26,7 +26,18 @@ const styles = {
     display: 'inline-block',
   },
   itemStyle: {
-    marginBottom: 10,
+    display: 'flex', // Ensure the image and content align properly
+  },
+  imageStyle: {
+    width: 200, // Adjust the size as needed
+    height: 200,
+    borderRadius: '50%', // Optional: to make the image circular
+    marginRight: 20, // Space between image and text
+  },
+  logoStyle: {
+    maxWidth: '50%',
+    maxHeight: '50%',
+    objectFit: 'contain',
   },
 };
 
@@ -56,51 +67,63 @@ function Experience(props) {
                 lineColor={theme.timelineLineColor}
               >
                 {data.map((item) => (
-                  <Fade>
+                  <Fade key={item.title + item.dateText}>
                     <TimelineItem
-                      key={item.title + item.dateText}
                       dateText={item.dateText}
                       dateInnerStyle={{ background: theme.accentColor }}
                       style={styles.itemStyle}
                       bodyContainerStyle={{ color: theme.color }}
                     >
-                      <h2 className="item-title">
-                        {item.title}
-                      </h2>
-                      <div style={styles.subtitleContainerStyle}>
-                        <h4 style={{ ...styles.subtitleStyle, color: theme.accentColor }}>
-                          {item.subtitle}
-                        </h4>
-                        {item.workType && (
-                        <h5 style={styles.inlineChild}>
-                    &nbsp;·
-                          {' '}
-                          {item.workType}
-                        </h5>
-                        )}
-                      </div>
-                      <ul style={styles.ulStyle}>
-                        {item.workDescription.map((point) => (
-                          <div key={point}>
-                            <li>
-                              <ReactMarkdown
-                                children={point}
-                                components={{
-                                  p: 'span',
-                                }}
+                      <div style={{ display: 'flex', alignItems: 'center' }}>
+                        <div>
+                          <h2 className="item-title">
+                            {item.title}
+                          </h2>
+                          {item.imageUrl && item.url && (
+                            <a href={item.url} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', textDecoration: 'none' }}>
+                              <img
+                                src={item.imageUrl}
+                                alt={item.subtitle}
+                                style={styles.logoStyle}
                               />
-                            </li>
-                            <br />
+                            </a>
+                          )}
+                          <div style={styles.subtitleContainerStyle}>
+                            <h4 style={{ ...styles.subtitleStyle, color: theme.accentColor }}>
+                              {item.subtitle}
+                            </h4>
+                            {item.workType && (
+                              <h5 style={styles.inlineChild}>
+                                &nbsp;·
+                                {' '}
+                                {item.workType}
+                              </h5>
+                            )}
                           </div>
-                        ))}
-                      </ul>
+                          <ul style={styles.ulStyle}>
+                            {item.workDescription.map((point) => (
+                              <div key={point}>
+                                <li>
+                                  <ReactMarkdown
+                                    children={point}
+                                    components={{
+                                      p: 'span',
+                                    }}
+                                  />
+                                </li>
+                                <br />
+                              </div>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
                     </TimelineItem>
                   </Fade>
                 ))}
               </Timeline>
             </Container>
           </div>
-        ) : <FallbackSpinner /> }
+        ) : <FallbackSpinner />}
     </>
   );
 }

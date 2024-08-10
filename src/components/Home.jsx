@@ -8,6 +8,11 @@ import FallbackSpinner from './FallbackSpinner';
 const styles = {
   nameStyle: {
     fontSize: '5em',
+    background: 'linear-gradient(to right, aquamarine, Teal)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
+    color: 'transparent',
   },
   inlineChild: {
     display: 'inline-block',
@@ -18,6 +23,8 @@ const styles = {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  typewriter: {
   },
 };
 

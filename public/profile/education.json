@@ -1,19 +1,56 @@
 {
     "education":[
         {
-            "title": "Jun 20XX - Jun 20YY",
-            "cardTitle": "B.Tech, Computer Science",
-            "cardSubtitle":"XYZ University, City",
-            "cardDetailedText": "CGPA - 9.5",
+            "title": "Nov 2021 - May 2025",
+            "cardTitle": "Thiagarajar College of Engineering, Madurai",
+            "cardSubtitle":"B.Tech, Information Technology",
+            "cardDetailedText": ["CGPA - 8.08","Tennis team"],
+            "url": "https://tce.edu/",
             "icon" : {
-                "src": "images/education/lorem-ipsum.png"
-            }
+                "src": "images/education/tce-logo.png"
+            },
+            "media": {
+                "name": "TCE image",
+                "type": "IMAGE",
+                "source": {
+                  "url": "images/education/tce.png"
+                }
+              }
+            
         },
         {
-            "title": "Apr 20XX",
-            "cardTitle": "High School",
-            "cardSubtitle":"ABC School, City",
-            "cardDetailedText": "Marks - 95%"
+            "title": "June 2021",
+            "cardTitle": "Velammal Vidyalaya, Madurai",
+            "cardSubtitle":"10th Grade",
+            "cardDetailedText": "Score - 93.6%",
+            "url": "https://velammalbodhicampus.com/",
+            "icon" : {
+                "src": "images/education/vbc-logo.png"
+            },
+            "media": {
+                "name": "VBC image",
+                "type": "IMAGE",
+                "source": {
+                  "url": "images/education/vbc.png"
+                }
+              }
+        },
+        {
+            "title": "March 2019",
+            "cardTitle": "Velammal Vidyalaya, Madurai",
+            "cardSubtitle":"12th Grade",
+            "cardDetailedText": "Score - 95.2%",
+            "url": "https://velammalbodhicampus.com/",
+            "icon" : {
+                "src": "images/education/vbc-logo.png"
+            },
+            "media": {
+                "name": "VBC image",
+                "type": "IMAGE",
+                "source": {
+                  "url": "images/education/vbc.png"
+                }
+              }
         }
     ]
 }

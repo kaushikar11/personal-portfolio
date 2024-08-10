@@ -3,7 +3,7 @@
         {
             "component": "About",
             "path": "/about",
-            "headerTitle": "About"
+            "headerTitle": "About Me"
         },
         {
             "component": "Skills",
@@ -24,6 +24,11 @@
             "component": "Projects",
             "path": "/projects",
             "headerTitle": "Projects"
+        },
+        {
+            "component": "Publications",
+            "path": "/publications",
+            "headerTitle": "Publications"
         }
     ]
 }

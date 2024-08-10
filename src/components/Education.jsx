@@ -50,15 +50,18 @@ function Education(props) {
                 hideControls
                 allowDynamicUpdate
                 useReadMore={false}
+                timelinePointDimension={150}
+                timelinePointShape="square"
                 items={data.education}
-                cardHeight={250}
+                mediaSettings={{ align: 'right', fit: 'contain' }}
+                cardHeight={100}
                 mode={mode}
                 theme={{
                   primary: theme.accentColor,
                   secondary: theme.accentColor,
                   cardBgColor: theme.chronoTheme.cardBgColor,
                   cardForeColor: theme.chronoTheme.cardForeColor,
-                  titleColor: theme.chronoTheme.titleColor,
+                  titleColor: theme.titleColor,
                 }}
               >
                 <div className="chrono-icons">
@@ -67,6 +70,7 @@ function Education(props) {
                       key={education.icon.src}
                       src={education.icon.src}
                       alt={education.icon.alt}
+                      style={{ width: '100px', height: '100px' }} // Adjust size here
                     />
                   ) : null))}
                 </div>

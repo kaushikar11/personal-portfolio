@@ -1,8 +1,13 @@
 {
     "logo" : {
-        "source": "images/logo.png",
-        "height" : 45,
-        "width" : 50
+        "source": "images/profile-logo.jpg",
+        "height" : 50,
+        "width" : 50,
+        "borderRadius" : "50%",
+        "objectFit" : "cover"
+    },
+    "name" : {
+        "name" : "Kaushik Alaguvadivel Ramya"
     },
     "sections": [
         {
@@ -30,8 +35,12 @@
             "href": "/projects"
         },
         {
+            "title": "Publications",
+            "href": "/publications"
+        },
+        {
             "title": "Resume",
-            "href": "https://drive.google.com/file/d/13kaPsdMNDsM4LV9g7m5-E5PTildp-yYf/view?usp=sharing",
+            "href": "resume/resume.pdf",
             "type": "link"
         }
     ]

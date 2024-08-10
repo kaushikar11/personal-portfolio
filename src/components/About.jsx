@@ -15,12 +15,18 @@ const styles = {
     textAlign: 'left',
     fontSize: '1.2em',
     fontWeight: 500,
+    padding: '40px',
   },
   introImageContainer: {
     margin: 10,
     justifyContent: 'center',
     alignItems: 'center',
     display: 'flex',
+  },
+  imagerounder: {
+    borderRadius: '50%', // Makes the logo circular
+    objectFit: 'cover',
+    padding: '50px',
   },
 };
 
@@ -29,9 +35,7 @@ function About(props) {
   const [data, setData] = useState(null);
 
   const parseIntro = (text) => (
-    <ReactMarkdown
-      children={text}
-    />
+    <ReactMarkdown children={text} />
   );
 
   useEffect(() => {
@@ -40,31 +44,37 @@ function About(props) {
     })
       .then((res) => res.json())
       .then((res) => setData(res))
-      .catch((err) => err);
+      .catch((err) => console.error(err));
   }, []);
 
+  if (!data) {
+    return <FallbackSpinner />;
+  }
+
+  // Ensure `data.about2` is replaced correctly with data values
+  const about2HTML = data.about2
+    ? data.about2
+      .replace(/{company}/g, data.company)
+      .replace(/{companyURL}/g, data.companyURL)
+    : '';
+
   return (
-    <>
-      <Header title={header} />
-      <div className="section-content-container">
-        <Container>
-          {data
-            ? (
-              <Fade>
-                <Row>
-                  <Col style={styles.introTextContainer}>
-                    {parseIntro(data.about)}
-                  </Col>
-                  <Col style={styles.introImageContainer}>
-                    <img src={data?.imageSource} alt="profile" />
-                  </Col>
-                </Row>
-              </Fade>
-            )
-            : <FallbackSpinner />}
-        </Container>
-      </div>
-    </>
+    <div className="section-content-container">
+      <Container>
+        <Fade>
+          <Row>
+            <Col style={styles.introImageContainer}>
+              <img style={styles.imagerounder} src={data.imageSource} alt="profile" />
+            </Col>
+            <Col style={styles.introTextContainer}>
+              <Header title={header} />
+              {parseIntro(data.about)}
+              <div dangerouslySetInnerHTML={{ __html: about2HTML }} />
+            </Col>
+          </Row>
+        </Fade>
+      </Container>
+    </div>
   );
 }
 

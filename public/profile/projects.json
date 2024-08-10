@@ -1,149 +1,142 @@
 {
     "projects" : [
         {
-            "image" : "images/projects/portfolio-poster.png",
-            "title": "Dev Portfolio",
-            "bodyText": "- Developer Portfolio Website made in React\n -  Fully customisable and dynamic, easily change data and images.\n - Dark Mode Support",
+            "image" : "images/projects/locallu-logo.png",
+            "title": "Locallu",
+            "bodyText": "- Building the world's first multi-LLM interaction x human engine for a groundbreaking approach to AGI.\n - A multi ai x human agent model for freelance solutions",
+            "links": [
+                {
+                    "text": "Locallu",
+                    "href": "https://locallu.com/"
+                },
+                {
+                    "text": "Linkedin",
+                    "href": "https://www.linkedin.com/company/locallu"
+                }
+            ],
+            "tags" : [
+                "Ai",
+                "AGI",
+                "Large language models"
+            ],
+            "Contributers" : [
+                {
+                    "name": "Shridhara Pavel R U",
+                    "contactURL": "https://www.linkedin.com/in/shridhara-pavel-r-u-4248a4265/"
+                }
+            ],
+            "additionalInfo": [
+              "Co-founder & Product/Ai Engineer"
+            ]
+        },
+        {
+            "image" : "images/projects/legaldad.png",
+            "title": "Legal dad",
+            "bodyText": "- Simplifying legal document prep for everyone using LLMs.\n - A live AI jarvis like assistant for Legal Document Preparation for Advocates from High court of Madras Madurai",
             "links": [
                 {
                     "text": "GitHub",
-                    "href": "https://github.com/mayankagarwal09/dev-portfolio"
+                    "href": "https://github.com/kaushikar11"
+                },
+                {
+                    "text": "Linkedin",
+                    "href": "https://www.linkedin.com/company/legalappa/"
+                }
+            ],
+            "tags" : [
+                "AI",
+                "LLM",
+                "Legal",
+                "Lawyers",
+                "Application"
+            ],
+            "Contributers" : [
+                {
+                    "name": "Shridhara Pavel R U",
+                    "contactURL": "https://www.linkedin.com/in/shridhara-pavel-r-u-4248a4265/"
+                }
+            ]
+        },
+        {
+            "image" : "images/projects/Tweeshirt.png",
+            "title": "Tweeshirt",
+            "bodyText": "- Social inspired custom creations through AI\n - Built a website which converts user's tweets into customised images using generative Ai\n - Stable diffusion is used\n - leveraged dropshipping capabilities to deliver Ai image printed T-shirts to homes",
+            "links": [
+                {
+                    "text": "GitHub",
+                    "href": "https://github.com/kaushikar11"
                 },
                 {
                     "text": "Live",
-                    "href": "https://mayankagarwal.me"
+                    "href": "https://tweeshirt.vercel.app/"
                 }
             ],
             "tags" : [
-                "React",
-                "Portfolio",
-                "JavaScript"
+                "NextJS",
+                "NodeJS",
+                "ReactJS",
+                "AI",
+                "Stable Diffusion",
+                "Twitter",
+                "printrove"
+            ],
+            "Contributers" : [
+                {
+                    "name": "Guru Charan K S",
+                    "contactURL": "https://www.linkedin.com/in/guru-charan-48377b271/"
+                }
             ]
         },
         {
-            "image" : "images/projects/caaring-poster.png",
-            "title": "Caaring -  Cab Share App",
-            "bodyText": "- A Cab Sharing web app made using **Django** for **VIT** Students. People can create a new cab or request to join an existing cab.\n - Added User authentication and password reset using **SendGrid**.\n - Deployed on **heroku** using **gunicorn**.",
+            "image" : "images/projects/hostel.png",
+            "title": "College Hostel DB management website",
+            "bodyText": "- A CRUD application which enables hostel warden to add,retrieve,edit and delete student details\n - MERN Stack Application\n - Authenticated for warden only\n - Allows warden to download student details as pdf",
             "links": [
                 {
                     "text": "GitHub",
-                    "href": "https://github.com/mayankagarwal09/Caaring"
-                },
-                {
-                    "text": "Live",
-                    "href": "http://caaring.herokuapp.com"
+                    "href": "https://github.com/kaushikar11"
                 }
             ],
             "tags" : [
+                "MERN",
+                "ReactJS",
+                "NodeJS",
+                "MongoDB",
+                "Firebase"
+            ],
+            "Contributers" : [
+                {
+                    "name": "Guru Charan K S",
+                    "contactURL": "https://www.linkedin.com/in/guru-charan-48377b271/"
+                }
+            ],
+            "additionalInfo": [
+              "for TCE hostel"
+            ]
+        },
+        {
+            "image": "images/projects/energy.jpg",
+            "title": "Energy Forecasting and Disaggregation",
+            "bodyText": "- The system is designed to efficiently connect users with the intricate workings of electrical energy prediction for both commercial and industrial applications.\n -  It enhances energy benchmarking and auditing by disaggregating the load of individual appliances and forecasting their usage.\n - We predicted the electrical energy consumption (in kWh) for the Computer Science department of our college.",
+            "links": [
+                {
+                    "text": "GitHub",
+                    "href": "https://github.com/kaushikar11"
+                }
+            ],
+            "tags" : [
+                "AI",
+                "Deep Learning",
+                "LSTM",
                 "Python",
-                "Django",
-                "BootStrap",
-                "SendGrid",
-                "Heroku",
-                "Gunicorn",
-                "VIT"
-            ]
-        },
-        {
-            "image" : "images/projects/quiet-hours-poster.jpg",
-            "title": "Quiet Hours App",
-            "bodyText": "- An Android App that **automatically silences** your phone during class hours, designed for **VITians**.\n - Option to select class **slots** and **custom time**.\n - Option to put on Vibrate instead of Silent.",
-            "links": [
-                {
-                    "text": "GitHub",
-                    "href": "https://github.com/mayankagarwal09/QuietHours-Android"
-                }
+                "Flask",
+                "Web Application"
             ],
-            "tags" : [
-                "Java",
-                "Android",
-                "Alarm Manager",
-                "VIT"
-            ]
-        },
-        {
-            "title": "Secure Chat App",
-            "bodyText": "- An Android App that allows users to send texts in real time.\n - End to End encryption using **RSA** Algorithm.\n - Uses **Firebase** database to store texts.\n - Secured with **Fingerprint** lock.",
-            "links": [
+            "Contributers" : [
                 {
-                    "text": "GitHub",
-                    "href": "https://github.com/mayankagarwal09/SecureChatApp"
+                    "name": "Guru Charan K S",
+                    "contactURL": "https://www.linkedin.com/in/guru-charan-48377b271/"
                 }
-            ],
-            "tags" : [
-                "Java",
-                "Android",
-                "Firebase",
-                "RSA"
-            ]
-        },
-        {
-            "title": "MVVM Sample App",
-            "bodyText": "- An Android App that loads data from mock API and show in both **LinearLayout** and **GridLayout RecyclerView**.\n - Offline support using **Room** DB and **NetworkBoundResource**.\n - Uses the **MVVM** architecture.",
-            "links": [
-                {
-                    "text": "GitHub",
-                    "href": "https://github.com/mayankagarwal09/mvvm-sample-app"
-                }
-            ],
-            "tags" : [
-                "Kotlin",
-                "Android",
-                "MVVM",
-                "Room",
-                "Coroutines",
-                "Flow",
-                "Hilt-Dagger",
-                "NetworkBoundResource"
-            ]
-        },
-        {
-            "title": "Feed List App",
-            "bodyText": "- An Android App that loads list of feeds from a **paginated** API and shows in a RecyclerView.\n - Uses the **MVVM** architecture.\n - Uses **Paging 3** library along with other Architecture Components.",
-            "links": [
-                {
-                    "text": "GitHub",
-                    "href": "https://github.com/mayankagarwal09/Paginated-App-Feeds-List"
-                }
-            ],
-            "tags" : [
-                "Kotlin",
-                "Android",
-                "MVVM",
-                "Paging 3",
-                "Coroutines",
-                "Flow"
-            ]
-        },
-        {
-            "title": "Task Tracker",
-            "bodyText": "- A simple Task Tracker web app made with **Angular 12**.\n - Uses **mock JSON server** to get, add, delete or update tasks.",
-            "links": [
-                {
-                    "text": "GitHub",
-                    "href": "https://github.com/mayankagarwal09/task-tracker-app"
-                }
-            ],
-            "tags" : [
-                "TypeScript",
-                "Angular 12",
-                "JavaScript"
-            ]
-        },
-        {
-            "title": "Image Encryption/Decryption",
-            "bodyText": "- A Web App for Image Encryption and Decryption made in **Django**.\n - Uses **SDES** algorithm for encryption/decryption.",
-            "links": [
-                {
-                    "text": "GitHub",
-                    "href": "https://github.com/mayankagarwal09/img-encrypt-sdes"
-                }
-            ],
-            "tags" : [
-                "Python",
-                "Django",
-                "SDES",
-                "Cryptography"
             ]
         }
     ]

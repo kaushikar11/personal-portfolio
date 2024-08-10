@@ -1,5 +1,8 @@
 {
-    "about": " This is where you can describe about **yourself**. The more you describe about yourself, the better it is!\n\n\nExtra Information about you, like hobbies and your goals.\nExample Paragraph: I am passionate about my work. Because I love what I do, I have a steady source of motivation that drives me to do my best. In my last job, this passion led me to challenge myself daily and learn new skills that helped me to do better work. For example, I taught myself how to use Photoshop to improve the quality of our photos and graphics. I soon became the go-to person for any design needs.",
-    "imageSource": "images/about/profile.png"
-    
+    "about": "Hi! I'm Kaushik. I love solving problems I encounter using whatever tools I have. I am an undergrad in Information Technology. I find it interesting to apply AI in various situations to see what it accomplishes. I enjoy researching AI and have made a few contributions to this vast field. I am currently researching eXplainable AI for everyone. My other interests include Full Stack Development, and I have completed a few projects in this area.",
+    "about2": "My passion for tech led me to co-found <a href='{companyURL}' style='color: orange;' target='_blank' rel='noopener noreferrer'>{company}</a> the world's first multi-agent AGI engine. The aim of <a href='{companyURL}' target='_blank' style='color: orange;' rel='noopener noreferrer'>{company}</a> is to promote the widespread use of AI in diverse fields. That’s a brief introduction about me. Feel free to explore my projects and publications!",
+    "imageSource": "images/about/profile.jpg",
+    "company": "Locallu",
+    "companyURL": "https://locallu.com/"
 }
+  
