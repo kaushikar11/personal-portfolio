@@ -43,12 +43,23 @@ const NavBar = () => {
       .catch((err) => err);
   }, []);
 
+  useEffect(() => {
+    const contentElement = document.querySelector('.page-content');
+    if (contentElement) {
+      if (expanded) {
+        const navbarHeight = document.querySelector('.navbar').offsetHeight;
+        contentElement.style.marginTop = `${navbarHeight}px`;
+      } else {
+        contentElement.style.marginTop = '0px';
+      }
+    }
+  }, [expanded]);
+
   return (
     <Navbar
-      fixed="top"
       expand="md"
       variant={theme.bsPrimaryVariant}
-      style={{ backgroundColor: theme.background }} // Set background color to match the theme
+      style={{ backgroundColor: theme.background, position: 'relative', zIndex: 1 }}
       expanded={expanded}
     >
       <Container>
@@ -56,12 +67,10 @@ const NavBar = () => {
           <Navbar.Brand
             className="navbar__link"
             href="/"
-            style={
-              {
-                color: theme.navbarTheme.linkColor,
-                paddingLeft: 0,
-              }
-            } // Set the color to match the theme
+            style={{
+              color: theme.navbarTheme.linkColor,
+              paddingLeft: 0,
+            }}
           >
             <span>{data?.name?.name}</span>
           </Navbar.Brand>
@@ -71,8 +80,7 @@ const NavBar = () => {
           onClick={() => setExpanded(!expanded)}
         />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto" />
-          <Nav>
+          <Nav className="ms-auto">
             {data?.sections?.map((section, index) => (
               section?.type === 'link' ? (
                 <ExternalNavLink

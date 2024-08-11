@@ -83,18 +83,16 @@ function Experience(props) {
 
   const renderExperienceContent = (experience) => (
     <div className="experience-content">
-      <div style={styles.experienceHeader}>
-        <h3 style={styles.experienceHeaderTitle}>{experience.position}</h3>
-        <a href={experience.url} target="_blank" rel="noopener noreferrer">
-          <button type="button" style={styles.experienceUrlButton}>
-            <img
-              src={experience.imageUrl}
-              alt={experience.subtitle}
-              style={styles.experienceUrlButtonImage}
-            />
-          </button>
-        </a>
-      </div>
+      <h3 style={styles.experienceHeaderTitle}>{experience.position}</h3>
+      <a href={experience.url} target="_blank" rel="noopener noreferrer">
+        <button type="button" style={styles.experienceUrlButton}>
+          <img
+            src={experience.imageUrl}
+            alt={experience.subtitle}
+            style={styles.experienceUrlButtonImage}
+          />
+        </button>
+      </a>
       <h4 style={styles.experienceContentWorkType}>
         <span style={{ fontWeight: 'bold' }}>
           <a href={experience.url} target="_blank" rel="noopener noreferrer">
@@ -134,6 +132,8 @@ function Experience(props) {
                   cardForeColor: theme.chronoTheme.cardForeColor,
                   titleColor: theme.titleColor,
                 }}
+                enableBreakPoint
+                verticalBreakPoint={400}
                 cardHeight={200}
               >
                 {data.map((experience) => (
