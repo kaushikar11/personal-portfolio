@@ -6,21 +6,6 @@ import styled, { ThemeContext } from 'styled-components';
 import endpoints from '../constants/endpoints';
 import ThemeToggler from './ThemeToggler';
 
-const styles = {
-  logoStyle: {
-    width: 50,
-    height: 50,
-    borderRadius: '50%', // Makes the logo circular
-    objectFit: 'cover',
-    marginLeft: 0, // Remove any left margin
-    marginRight: 10, // Add some space to the right of the logo
-  },
-  brandStyle: {
-    paddingLeft: 0, // Remove left padding
-    marginLeft: 0, // Remove left margin
-  },
-};
-
 const ExternalNavLink = styled.a`
   color: ${(props) => props.theme.navbarTheme.linkColor};
   &:hover {
@@ -67,16 +52,6 @@ const NavBar = () => {
       expanded={expanded}
     >
       <Container>
-        {data?.logo && (
-          <Navbar.Brand href="/">
-            <img
-              src={data?.logo?.source}
-              className="d-inline-block align-top"
-              alt="main logo"
-              style={styles.logoStyle}
-            />
-          </Navbar.Brand>
-        )}
         {data?.name?.name && (
           <Navbar.Brand
             className="navbar__link"

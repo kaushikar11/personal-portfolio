@@ -19,11 +19,9 @@ function MainApp() {
         return res.json();
       })
       .then((res) => {
-        console.log('Fetched data:', res); // Debugging line
         setData(res);
       })
-      .catch((err) => {
-        console.error('Fetch error:', err); // Debugging line
+      .catch(() => {
       });
   }, []);
 

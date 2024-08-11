@@ -45,8 +45,7 @@ function About(props) {
     })
       .then((res) => res.json())
       .then((res) => setData(res))
-      .then(() => setFadeIn(true))
-      .catch((err) => console.error(err));
+      .then(() => setFadeIn(true));
   }, []);
 
   if (!data) {

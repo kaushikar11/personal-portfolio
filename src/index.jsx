@@ -1,4 +1,6 @@
 import React from 'react';
+// eslint-disable-next-line import/no-unresolved
+import { Analytics } from '@vercel/analytics/react';
 import ReactDOM from 'react-dom/client'; // Updated import for React 18
 import './index.css';
 import { BrowserRouter } from 'react-router-dom';
@@ -13,6 +15,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <App />
+      <Analytics />
     </BrowserRouter>
   </React.StrictMode>,
 );

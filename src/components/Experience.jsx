@@ -78,7 +78,7 @@ function Experience(props) {
       .then((res) => res.json())
       .then((res) => setData(res.experiences))
       .then(() => setFadeIn(true))
-      .catch((err) => console.error(err));
+      .catch((err) => err);
   }, []);
 
   const renderExperienceContent = (experience) => (
