@@ -12,10 +12,24 @@ function MainApp() {
     fetch(endpoints.routes, {
       method: 'GET',
     })
-      .then((res) => res.json())
-      .then((res) => setData(res))
-      .catch((err) => err);
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return res.json();
+      })
+      .then((res) => {
+        console.log('Fetched data:', res); // Debugging line
+        setData(res);
+      })
+      .catch((err) => {
+        console.error('Fetch error:', err); // Debugging line
+      });
   }, []);
+
+  if (!data) {
+    return <FallbackSpinner />; // Ensure fallback spinner is displayed until data is fetched
+  }
 
   return (
     <div className="MainApp">
@@ -24,19 +38,18 @@ function MainApp() {
         <Switch>
           <Suspense fallback={<FallbackSpinner />}>
             <Route exact path="/" component={Home} />
-            {data
-              && data.sections.map((route) => {
-                const SectionComponent = React.lazy(() => import('./components/' + route.component));
-                return (
-                  <Route
-                    key={route.headerTitle}
-                    path={route.path}
-                    component={() => (
-                      <SectionComponent header={route.headerTitle} />
-                    )}
-                  />
-                );
-              })}
+            {data.sections.map((route) => {
+              const SectionComponent = React.lazy(() => import(`./components/${route.component}`));
+              return (
+                <Route
+                  key={route.path} // Use route.path as the key to ensure uniqueness
+                  path={route.path}
+                  component={() => (
+                    <SectionComponent header={route.headerTitle} />
+                  )}
+                />
+              );
+            })}
           </Suspense>
         </Switch>
       </main>

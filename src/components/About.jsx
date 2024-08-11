@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Container, Col, Row } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import Fade from 'react-reveal';
+import Fade from './Fade';
 import Header from './Header';
 import endpoints from '../constants/endpoints';
 import FallbackSpinner from './FallbackSpinner';
@@ -33,6 +33,7 @@ const styles = {
 function About(props) {
   const { header } = props;
   const [data, setData] = useState(null);
+  const [fadeIn, setFadeIn] = useState(false);
 
   const parseIntro = (text) => (
     <ReactMarkdown children={text} />
@@ -44,6 +45,7 @@ function About(props) {
     })
       .then((res) => res.json())
       .then((res) => setData(res))
+      .then(() => setFadeIn(true))
       .catch((err) => console.error(err));
   }, []);
 
@@ -61,7 +63,7 @@ function About(props) {
   return (
     <div className="section-content-container">
       <Container>
-        <Fade>
+        <Fade in={fadeIn}>
           <Row>
             <Col style={styles.introImageContainer}>
               <img style={styles.imagerounder} src={data.imageSource} alt="profile" />

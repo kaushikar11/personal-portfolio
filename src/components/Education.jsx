@@ -2,8 +2,8 @@ import React, { useEffect, useState, useContext } from 'react';
 import { Chrono } from 'react-chrono';
 import { Container } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import Fade from 'react-reveal';
 import { ThemeContext } from 'styled-components';
+import Fade from './Fade';
 import endpoints from '../constants/endpoints';
 import Header from './Header';
 import FallbackSpinner from './FallbackSpinner';
@@ -13,8 +13,9 @@ function Education(props) {
   const theme = useContext(ThemeContext);
   const { header } = props;
   const [data, setData] = useState(null);
+  const [fadeIn, setFadeIn] = useState(false);
   const [width, setWidth] = useState('50vw');
-  const [mode, setMode] = useState('VERTICAL_ALTERNATING');
+  const [mode, setMode] = useState('VERTICAL');
 
   useEffect(() => {
     fetch(endpoints.education, {
@@ -22,6 +23,7 @@ function Education(props) {
     })
       .then((res) => res.json())
       .then((res) => setData(res))
+      .then(() => setFadeIn(true))
       .catch((err) => err);
 
     if (window?.innerWidth < 576) {
@@ -43,7 +45,7 @@ function Education(props) {
     <>
       <Header title={header} />
       {data ? (
-        <Fade>
+        <Fade in={fadeIn}>
           <div style={{ width }} className="section-content-container">
             <Container>
               <Chrono

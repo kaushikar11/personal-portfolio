@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { Container, Row, Button } from 'react-bootstrap';
 import { ThemeContext } from 'styled-components';
 import PropTypes from 'prop-types';
-import Fade from 'react-reveal/Fade';
+import Fade from './Fade';
 import Header from './Header';
 import endpoints from '../constants/endpoints';
 import ProjectCard from './projects/ProjectCard';
@@ -21,6 +21,7 @@ const Projects = (props) => {
   const theme = useContext(ThemeContext);
   const { header } = props;
   const [data, setData] = useState(null);
+  const [fadeIn, setFadeIn] = useState(false);
   const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
@@ -29,6 +30,7 @@ const Projects = (props) => {
     })
       .then((res) => res.json())
       .then((res) => setData(res))
+      .then(() => setFadeIn(true))
       .catch((err) => err);
   }, []);
   const numberOfItems = showMore && data ? data.length : 6;
@@ -41,7 +43,7 @@ const Projects = (props) => {
             <Container style={styles.containerStyle}>
               <Row xs={1} sm={1} md={2} lg={3} className="g-4">
                 {data.projects?.slice(0, numberOfItems).map((project) => (
-                  <Fade key={project.title}>
+                  <Fade in={fadeIn} key={project.title}>
                     <ProjectCard project={project} />
                   </Fade>
                 ))}

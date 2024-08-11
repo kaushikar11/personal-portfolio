@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import PropTypes from 'prop-types';
-import Fade from 'react-reveal';
 import { Container, Row, Col } from 'react-bootstrap';
+import Fade from './Fade';
 import Header from './Header';
 import endpoints from '../constants/endpoints';
 import FallbackSpinner from './FallbackSpinner';
@@ -43,6 +43,7 @@ const styles = {
 function Skills(props) {
   const { header } = props;
   const [data, setData] = useState(null);
+  const [fadeIn, setFadeIn] = useState(false);
 
   const renderSkillsIntro = (intro) => (
     <h4 style={styles.introTextContainer}>
@@ -56,6 +57,7 @@ function Skills(props) {
     })
       .then((res) => res.json())
       .then((res) => setData(res))
+      .then(() => setFadeIn(true))
       .catch((err) => err);
   }, []);
 
@@ -63,7 +65,7 @@ function Skills(props) {
     <>
       <Header title={header} />
       {data ? (
-        <Fade>
+        <Fade in={fadeIn}>
           <div className="section-content-container">
             <Container>
               {renderSkillsIntro(data.intro)}
