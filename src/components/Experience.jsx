@@ -124,6 +124,9 @@ function Experience(props) {
                 allowDynamicUpdate
                 useReadMore={false}
                 items={data}
+                fontSizes={{
+                  title: '0.8rem',
+                }}
                 mode="VERTICAL"
                 theme={{
                   primary: theme.accentColor,
