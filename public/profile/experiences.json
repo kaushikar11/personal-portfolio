@@ -1,7 +1,8 @@
 {
     "experiences": [
         {
-            "title": "Co-Founder & Product/Ai Engineer",
+            "title": "02/2024 – Present",
+            "position": "Co-Founder & Product/Ai Engineer",
             "imageUrl": "images/experiences/locallu-logo.png",
             "url": "https://locallu.com/",
             "subtitle": "Locallu",
@@ -9,12 +10,12 @@
             "workDescription": [
                 "Building the world's first multi-LLM interaction x human engine for a groundbreaking approach to AGI.",
                 "A multi ai x human agent model for freelance solutions"
-            ],
-            "dateText": "02/2024 – Present"
+            ]
             
         },
         {
-            "title": "Intern",
+            "title": "12/2023 – 01/2024",
+            "position": "Intern",
             "subtitle": "pi42.com",
             "imageUrl": "images/experiences/pi42.png",
             "url":"https://pi42.com/",
@@ -23,19 +24,18 @@
                 "Developed an e-commerce website - Tweeshirt",
                 "the application utilizes generative Ai to create images from user's tweets",
                 "prints the generated images in T-shirts and delivers it to their homes"
-            ],
-            "dateText": "12/2023 – 01/2024"
+            ]
         },
         {
-            "title": "Intern",
+            "title": "06/2023",
+            "position": "Intern",
             "subtitle": "KaarTech",
             "imageUrl": "images/experiences/kaar.png",
             "url": "https://kaartech.com/",
             "workType": "Internship",
             "workDescription": [
                 "Analysing and predicting seasonal sales data."
-            ],
-            "dateText": "06/2023"
+            ]
         }
     ]
 }

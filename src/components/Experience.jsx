@@ -1,43 +1,67 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { Timeline, TimelineItem } from 'vertical-timeline-component-for-react';
+import { Chrono } from 'react-chrono';
 import { Container } from 'react-bootstrap';
-import ReactMarkdown from 'react-markdown';
 import PropTypes from 'prop-types';
 import { ThemeContext } from 'styled-components';
-import Fade from 'react-reveal';
+import Fade from './Fade';
 import Header from './Header';
 import endpoints from '../constants/endpoints';
 import FallbackSpinner from './FallbackSpinner';
-import '../css/experience.css';
 
+// Styles
 const styles = {
-  ulStyle: {
-    listStylePosition: 'outside',
-    paddingLeft: 20,
+  sectionContentContainer: {
+    padding: '20px',
   },
-  subtitleContainerStyle: {
-    marginTop: 10,
-    marginBottom: 10,
+  chronoCard: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start', // Align content at the top
   },
-  subtitleStyle: {
-    display: 'inline-block',
+  chronoCardLeft: {
+    flex: 1,
+    paddingRight: '20px',
+    textAlign: 'left', // Align content to the left
   },
-  inlineChild: {
-    display: 'inline-block',
+  chronoCardRight: {
+    flex: 3,
+    paddingLeft: '20px',
+    textAlign: 'left', // Align content to the left
   },
-  itemStyle: {
-    display: 'flex', // Ensure the image and content align properly
+  experienceHeader: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
-  imageStyle: {
-    width: 200, // Adjust the size as needed
-    height: 200,
-    borderRadius: '50%', // Optional: to make the image circular
-    marginRight: 20, // Space between image and text
+  experienceHeaderTitle: {
+    fontSize: '1.5em',
+    margin: 0,
+    textAlign: 'left', // Align title to the left
   },
-  logoStyle: {
-    maxWidth: '50%',
-    maxHeight: '50%',
-    objectFit: 'contain',
+  experienceUrlButton: {
+    backgroundColor: 'transparent',
+    border: 'none',
+    cursor: 'pointer',
+  },
+  experienceUrlButtonImage: {
+    maxWidth: '50%', // Ensure image fits within the container
+    maxHeight: '50%', // Ensure image fits within the container
+    objectFit: 'contain', // Maintain the aspect ratio
+  },
+  experienceContentWorkType: {
+    fontSize: '1.2em',
+    marginTop: '10px',
+    textAlign: 'left', // Align work type to the left
+  },
+  experienceContentUl: {
+    marginTop: '10px',
+    paddingLeft: '20px',
+    textAlign: 'left', // Align list to the left
+  },
+  experienceContentLi: {
+    marginBottom: '5px',
+    textAlign: 'left', // Align list items to the left
   },
 };
 
@@ -45,6 +69,7 @@ function Experience(props) {
   const theme = useContext(ThemeContext);
   const { header } = props;
   const [data, setData] = useState(null);
+  const [fadeIn, setFadeIn] = useState(false);
 
   useEffect(() => {
     fetch(endpoints.experiences, {
@@ -52,78 +77,82 @@ function Experience(props) {
     })
       .then((res) => res.json())
       .then((res) => setData(res.experiences))
+      .then(() => setFadeIn(true))
       .catch((err) => err);
   }, []);
+
+  const renderExperienceContent = (experience) => (
+    <div className="experience-content">
+      <h3 style={styles.experienceHeaderTitle}>{experience.position}</h3>
+      <a href={experience.url} target="_blank" rel="noopener noreferrer">
+        <button type="button" style={styles.experienceUrlButton}>
+          <img
+            src={experience.imageUrl}
+            alt={experience.subtitle}
+            style={styles.experienceUrlButtonImage}
+          />
+        </button>
+      </a>
+      <h4 style={styles.experienceContentWorkType}>
+        <span style={{ fontWeight: 'bold' }}>
+          <a href={experience.url} target="_blank" rel="noopener noreferrer">
+            {experience.subtitle}
+          </a>
+          &nbsp;&middot;&nbsp;
+        </span>
+        {experience.workType}
+      </h4>
+      <ul style={styles.experienceContentUl}>
+        {experience.workDescription.map((desc) => (
+          <li key={desc} style={styles.experienceContentLi}>
+            {desc}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 
   return (
     <>
       <Header title={header} />
-
-      {data
-        ? (
-          <div className="section-content-container">
+      {data ? (
+        <Fade in={fadeIn}>
+          <div style={styles.sectionContentContainer}>
             <Container>
-              <Timeline
-                lineColor={theme.timelineLineColor}
+              <Chrono
+                hideControls
+                allowDynamicUpdate
+                useReadMore={false}
+                items={data}
+                fontSizes={{
+                  title: '0.8rem',
+                }}
+                mode="VERTICAL"
+                theme={{
+                  primary: theme.accentColor,
+                  secondary: theme.accentColor,
+                  cardBgColor: theme.chronoTheme.cardBgColor,
+                  cardForeColor: theme.chronoTheme.cardForeColor,
+                  titleColor: theme.titleColor,
+                }}
+                enableBreakPoint
+                verticalBreakPoint={400}
+                cardHeight={200}
               >
-                {data.map((item) => (
-                  <Fade key={item.title + item.dateText}>
-                    <TimelineItem
-                      dateText={item.dateText}
-                      dateInnerStyle={{ background: theme.accentColor }}
-                      style={styles.itemStyle}
-                      bodyContainerStyle={{ color: theme.color }}
-                    >
-                      <div style={{ display: 'flex', alignItems: 'center' }}>
-                        <div>
-                          <h2 className="item-title">
-                            {item.title}
-                          </h2>
-                          {item.imageUrl && item.url && (
-                            <a href={item.url} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', textDecoration: 'none' }}>
-                              <img
-                                src={item.imageUrl}
-                                alt={item.subtitle}
-                                style={styles.logoStyle}
-                              />
-                            </a>
-                          )}
-                          <div style={styles.subtitleContainerStyle}>
-                            <h4 style={{ ...styles.subtitleStyle, color: theme.accentColor }}>
-                              {item.subtitle}
-                            </h4>
-                            {item.workType && (
-                              <h5 style={styles.inlineChild}>
-                                &nbsp;·
-                                {' '}
-                                {item.workType}
-                              </h5>
-                            )}
-                          </div>
-                          <ul style={styles.ulStyle}>
-                            {item.workDescription.map((point) => (
-                              <div key={point}>
-                                <li>
-                                  <ReactMarkdown
-                                    children={point}
-                                    components={{
-                                      p: 'span',
-                                    }}
-                                  />
-                                </li>
-                                <br />
-                              </div>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                    </TimelineItem>
-                  </Fade>
+                {data.map((experience) => (
+                  <div key={experience.dateText} style={styles.chronoCard}>
+                    <div style={styles.chronoCardRight}>
+                      {renderExperienceContent(experience)}
+                    </div>
+                  </div>
                 ))}
-              </Timeline>
+              </Chrono>
             </Container>
           </div>
-        ) : <FallbackSpinner />}
+        </Fade>
+      ) : (
+        <FallbackSpinner />
+      )}
     </>
   );
 }

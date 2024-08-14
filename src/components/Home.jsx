@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Typewriter from 'typewriter-effect';
-import Fade from 'react-reveal';
+import Fade from './Fade';
 import endpoints from '../constants/endpoints';
 import Social from './Social';
 import FallbackSpinner from './FallbackSpinner';
@@ -18,6 +18,7 @@ const styles = {
     display: 'inline-block',
   },
   mainContainer: {
+    minHeight: '100vh',
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
@@ -30,6 +31,7 @@ const styles = {
 
 function Home() {
   const [data, setData] = useState(null);
+  const [fadeIn, setFadeIn] = useState(false);
 
   useEffect(() => {
     fetch(endpoints.home, {
@@ -37,11 +39,12 @@ function Home() {
     })
       .then((res) => res.json())
       .then((res) => setData(res))
+      .then(() => setFadeIn(true))
       .catch((err) => err);
   }, []);
 
   return data ? (
-    <Fade>
+    <Fade in={fadeIn}>
       <div style={styles.mainContainer}>
         <h1 style={styles.nameStyle}>{data?.name}</h1>
         <div style={{ flexDirection: 'row' }}>

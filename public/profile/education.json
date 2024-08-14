@@ -4,11 +4,8 @@
             "title": "Nov 2021 - May 2025",
             "cardTitle": "Thiagarajar College of Engineering, Madurai",
             "cardSubtitle":"B.Tech, Information Technology",
-            "cardDetailedText": ["CGPA - 8.08","Tennis team"],
+            "cardDetailedText": "- CGPA - 8.08  \u00B7 Tennis team",
             "url": "https://tce.edu/",
-            "icon" : {
-                "src": "images/education/tce-logo.png"
-            },
             "media": {
                 "name": "TCE image",
                 "type": "IMAGE",
@@ -22,11 +19,8 @@
             "title": "June 2021",
             "cardTitle": "Velammal Vidyalaya, Madurai",
             "cardSubtitle":"10th Grade",
-            "cardDetailedText": "Score - 93.6%",
+            "cardDetailedText": "- Score - 93.6%",
             "url": "https://velammalbodhicampus.com/",
-            "icon" : {
-                "src": "images/education/vbc-logo.png"
-            },
             "media": {
                 "name": "VBC image",
                 "type": "IMAGE",
@@ -39,11 +33,8 @@
             "title": "March 2019",
             "cardTitle": "Velammal Vidyalaya, Madurai",
             "cardSubtitle":"12th Grade",
-            "cardDetailedText": "Score - 95.2%",
+            "cardDetailedText": "- Score - 95.2%",
             "url": "https://velammalbodhicampus.com/",
-            "icon" : {
-                "src": "images/education/vbc-logo.png"
-            },
             "media": {
                 "name": "VBC image",
                 "type": "IMAGE",

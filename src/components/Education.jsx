@@ -2,8 +2,8 @@ import React, { useEffect, useState, useContext } from 'react';
 import { Chrono } from 'react-chrono';
 import { Container } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import Fade from 'react-reveal';
 import { ThemeContext } from 'styled-components';
+import Fade from './Fade';
 import endpoints from '../constants/endpoints';
 import Header from './Header';
 import FallbackSpinner from './FallbackSpinner';
@@ -13,8 +13,8 @@ function Education(props) {
   const theme = useContext(ThemeContext);
   const { header } = props;
   const [data, setData] = useState(null);
-  const [width, setWidth] = useState('50vw');
-  const [mode, setMode] = useState('VERTICAL_ALTERNATING');
+  const [fadeIn, setFadeIn] = useState(false);
+  const [mode, setMode] = useState('VERTICAL');
 
   useEffect(() => {
     fetch(endpoints.education, {
@@ -22,40 +22,51 @@ function Education(props) {
     })
       .then((res) => res.json())
       .then((res) => setData(res))
+      .then(() => setFadeIn(true))
       .catch((err) => err);
 
-    if (window?.innerWidth < 576) {
-      setMode('VERTICAL');
-    }
+    const handleResize = () => {
+      if (window?.innerWidth < 576) {
+        setMode('VERTICAL_ALTERNATING');
+      } else {
+        setMode('VERTICAL_ALTERNATING');
+      }
+    };
 
-    if (window?.innerWidth < 576) {
-      setWidth('90vw');
-    } else if (window?.innerWidth >= 576 && window?.innerWidth < 768) {
-      setWidth('90vw');
-    } else if (window?.innerWidth >= 768 && window?.innerWidth < 1024) {
-      setWidth('75vw');
-    } else {
-      setWidth('50vw');
-    }
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (
     <>
       <Header title={header} />
       {data ? (
-        <Fade>
-          <div style={{ width }} className="section-content-container">
-            <Container>
+        <Fade in={fadeIn}>
+          <div className="section-content-container" style={{ width: '100%' }}>
+            <Container fluid style={{ padding: 0 }}>
               <Chrono
                 hideControls
                 allowDynamicUpdate
                 useReadMore={false}
-                timelinePointDimension={150}
-                timelinePointShape="square"
+                timelinePointDimension={window.innerWidth < 576 ? 50 : 150}
+                timelinePointShape="circle"
                 items={data.education}
-                mediaSettings={{ align: 'right', fit: 'contain' }}
+                mediaSettings={{ align: 'left', fit: 'contain' }}
                 cardHeight={100}
+                mediaHeight={100}
+                itemWidth={200}
                 mode={mode}
+                fontSizes={{
+                  cardSubtitle: '0.85rem',
+                  cardText: '0.8rem',
+                  cardTitle: '1rem',
+                  title: '1.5rem',
+                  cardDetailedText: '0.5rem',
+                }}
+                enableBreakPoint
+                verticalBreakPoint={400}
                 theme={{
                   primary: theme.accentColor,
                   secondary: theme.accentColor,
@@ -63,16 +74,19 @@ function Education(props) {
                   cardForeColor: theme.chronoTheme.cardForeColor,
                   titleColor: theme.titleColor,
                 }}
+                style={{ width: '100%', textAlign: 'left', marginLeft: 0 }} // Ensure it takes full width
               >
-                <div className="chrono-icons">
-                  {data.education.map((education) => (education.icon ? (
-                    <img
-                      key={education.icon.src}
-                      src={education.icon.src}
-                      alt={education.icon.alt}
-                      style={{ width: '100px', height: '100px' }} // Adjust size here
-                    />
-                  ) : null))}
+                <div className="chrono-icons" style={{ justifyContent: 'flex-start' }}>
+                  {data.education.map((education) => (
+                    education.icon ? (
+                      <img
+                        key={education.icon.src}
+                        src={education.icon.src}
+                        alt={education.icon.alt}
+                        style={{ width: window.innerWidth < 576 ? '80px' : '150px', height: window.innerWidth < 576 ? '80px' : '150px' }} // Adjust icon size based on screen width
+                      />
+                    ) : null
+                  ))}
                 </div>
               </Chrono>
             </Container>

@@ -6,21 +6,6 @@ import styled, { ThemeContext } from 'styled-components';
 import endpoints from '../constants/endpoints';
 import ThemeToggler from './ThemeToggler';
 
-const styles = {
-  logoStyle: {
-    width: 50,
-    height: 50,
-    borderRadius: '50%', // Makes the logo circular
-    objectFit: 'cover',
-    marginLeft: 0, // Remove any left margin
-    marginRight: 10, // Add some space to the right of the logo
-  },
-  brandStyle: {
-    paddingLeft: 0, // Remove left padding
-    marginLeft: 0, // Remove left margin
-  },
-};
-
 const ExternalNavLink = styled.a`
   color: ${(props) => props.theme.navbarTheme.linkColor};
   &:hover {
@@ -58,35 +43,34 @@ const NavBar = () => {
       .catch((err) => err);
   }, []);
 
+  useEffect(() => {
+    const contentElement = document.querySelector('.page-content');
+    if (contentElement) {
+      if (expanded) {
+        const navbarHeight = document.querySelector('.navbar').offsetHeight;
+        contentElement.style.marginTop = `${navbarHeight}px`;
+      } else {
+        contentElement.style.marginTop = '0px';
+      }
+    }
+  }, [expanded]);
+
   return (
     <Navbar
-      fixed="top"
       expand="md"
       variant={theme.bsPrimaryVariant}
-      style={{ backgroundColor: theme.background }} // Set background color to match the theme
+      style={{ backgroundColor: theme.background, position: 'relative', zIndex: 1 }}
       expanded={expanded}
     >
       <Container>
-        {data?.logo && (
-          <Navbar.Brand href="/">
-            <img
-              src={data?.logo?.source}
-              className="d-inline-block align-top"
-              alt="main logo"
-              style={styles.logoStyle}
-            />
-          </Navbar.Brand>
-        )}
         {data?.name?.name && (
           <Navbar.Brand
             className="navbar__link"
             href="/"
-            style={
-              {
-                color: theme.navbarTheme.linkColor,
-                paddingLeft: 0,
-              }
-            } // Set the color to match the theme
+            style={{
+              color: theme.navbarTheme.linkColor,
+              paddingLeft: 0,
+            }}
           >
             <span>{data?.name?.name}</span>
           </Navbar.Brand>
@@ -96,8 +80,7 @@ const NavBar = () => {
           onClick={() => setExpanded(!expanded)}
         />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto" />
-          <Nav>
+          <Nav className="ms-auto">
             {data?.sections?.map((section, index) => (
               section?.type === 'link' ? (
                 <ExternalNavLink
@@ -126,10 +109,10 @@ const NavBar = () => {
               )
             ))}
           </Nav>
+          <ThemeToggler
+            onClick={() => setExpanded(false)}
+          />
         </Navbar.Collapse>
-        <ThemeToggler
-          onClick={() => setExpanded(false)}
-        />
       </Container>
     </Navbar>
   );

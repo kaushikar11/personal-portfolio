@@ -5,31 +5,29 @@ import AppContext from '../AppContext';
 
 function ThemeToggler(props) {
   const { onClick } = props;
-  const handleOnChange = (darkMode) => {
-    darkMode.toggle();
-    onClick();
-  };
 
   return (
-    <>
-      <AppContext.Consumer>
-        {(values) => (
-          <div style={{ marginBottom: 8, marginRight: 20 }}>
-            <DarkModeToggle
-              onChange={() => handleOnChange(values.darkMode)}
-              checked={values.darkMode.value}
-              size={50}
-            />
-          </div>
-        )}
-      </AppContext.Consumer>
-    </>
+    <AppContext.Consumer>
+      {({ darkMode, toggle }) => (
+        <div style={{ marginBottom: 8, marginRight: 20 }}>
+          <DarkModeToggle
+            onChange={() => {
+              toggle();
+              onClick();
+            }}
+            checked={darkMode}
+            size={50}
+          />
+        </div>
+      )}
+    </AppContext.Consumer>
   );
 }
 
 ThemeToggler.propTypes = {
   onClick: PropTypes.func,
 };
+
 ThemeToggler.defaultProps = {
   onClick: () => {},
 };

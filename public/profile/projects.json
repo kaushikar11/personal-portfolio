@@ -30,34 +30,6 @@
             ]
         },
         {
-            "image" : "images/projects/legaldad.png",
-            "title": "Legal dad",
-            "bodyText": "- Simplifying legal document prep for everyone using LLMs.\n - A live AI jarvis like assistant for Legal Document Preparation for Advocates from High court of Madras Madurai",
-            "links": [
-                {
-                    "text": "GitHub",
-                    "href": "https://github.com/kaushikar11"
-                },
-                {
-                    "text": "Linkedin",
-                    "href": "https://www.linkedin.com/company/legalappa/"
-                }
-            ],
-            "tags" : [
-                "AI",
-                "LLM",
-                "Legal",
-                "Lawyers",
-                "Application"
-            ],
-            "Contributers" : [
-                {
-                    "name": "Shridhara Pavel R U",
-                    "contactURL": "https://www.linkedin.com/in/shridhara-pavel-r-u-4248a4265/"
-                }
-            ]
-        },
-        {
             "image" : "images/projects/Tweeshirt.png",
             "title": "Tweeshirt",
             "bodyText": "- Social inspired custom creations through AI\n - Built a website which converts user's tweets into customised images using generative Ai\n - Stable diffusion is used\n - leveraged dropshipping capabilities to deliver Ai image printed T-shirts to homes",
@@ -112,6 +84,34 @@
             ],
             "additionalInfo": [
               "for TCE hostel"
+            ]
+        },
+        {
+            "image" : "images/projects/legaldad.png",
+            "title": "Legal dad",
+            "bodyText": "- Simplifying legal document prep for everyone using LLMs.\n - A live AI jarvis like assistant for Legal Document Preparation for Advocates from High court of Madras Madurai",
+            "links": [
+                {
+                    "text": "GitHub",
+                    "href": "https://github.com/kaushikar11"
+                },
+                {
+                    "text": "Linkedin",
+                    "href": "https://www.linkedin.com/company/legalappa/"
+                }
+            ],
+            "tags" : [
+                "AI",
+                "LLM",
+                "Legal",
+                "Lawyers",
+                "Application"
+            ],
+            "Contributers" : [
+                {
+                    "name": "Shridhara Pavel R U",
+                    "contactURL": "https://www.linkedin.com/in/shridhara-pavel-r-u-4248a4265/"
+                }
             ]
         },
         {
