@@ -10,7 +10,7 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0-rc.0",
-    "react-chrono": "^1.12.1",
+    "react-chrono": "^1.15.1",
     "react-dark-mode-toggle": "^0.2.0",
     "react-dom": "^17.0.2",
     "react-markdown": "^7.0.1",
