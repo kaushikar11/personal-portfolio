@@ -22,6 +22,7 @@ function MainApp() {
         setData(res);
       })
       .catch(() => {
+        // Handle error, e.g., display a message or redirect
       });
   }, []);
 
