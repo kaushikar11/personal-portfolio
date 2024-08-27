@@ -1,0 +1,44 @@
+{
+    "extrastuff" : [
+        {
+            "image" : "images/publications/her.jpg",
+            "title": "XAI in HER systems*",
+            "bodyText": "*An ongoing research",
+            "tags" : [
+                "AI",
+                "XAI",
+                "HER Systems"
+            ],
+            "Co-authors" : [
+                {
+                    "name": "Dr.S.Padmavathi",
+                    "contactURL": "https://www.tce.edu/staff_profile/faculty/BECSE/spmcse.html"
+                },
+                {
+                    "name": "Guru Charan K S",
+                    "contactURL": "https://www.linkedin.com/in/guru-charan-48377b271/"
+                }
+            ]
+        },
+        {
+            "image" : "images/publications/herrai.jpg",
+            "title": "Enabling Accountability in HER systems*",
+            "bodyText": "*An ongoing research",
+            "tags" : [
+                "AI",
+                "XAI",
+                "HER Systems"
+            ],
+            "Co-authors" : [
+                {
+                    "name": "Dr.S.Padmavathi",
+                    "contactURL": "https://www.tce.edu/staff_profile/faculty/BECSE/spmcse.html"
+                },
+                {
+                    "name": "Guru Charan K S",
+                    "contactURL": "https://www.linkedin.com/in/guru-charan-48377b271/"
+                }
+            ]
+        }
+    ]
+}
