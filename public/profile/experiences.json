@@ -1,19 +1,6 @@
 {
     "experiences": [
         {
-            "title": "02/2024 – Present",
-            "position": "Co-Founder & Product/Ai Engineer",
-            "imageUrl": "images/experiences/locallu-logo.png",
-            "url": "https://locallu.com/",
-            "subtitle": "Locallu",
-            "workType": "Self-Employed",
-            "workDescription": [
-                "Building the world's first multi-LLM interaction x human engine for a groundbreaking approach to AGI.",
-                "A multi ai x human agent model for freelance solutions"
-            ]
-            
-        },
-        {
             "title": "12/2023 – 01/2024",
             "position": "Intern",
             "subtitle": "pi42.com",
