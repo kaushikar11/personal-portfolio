@@ -1,16 +1,20 @@
 {
     "social": [
         {
-            "network" : "linkedin",
+            "network": "linkedin",
             "href": "https://www.linkedin.com/in/kaushik-alaguvadivel-ramya-405673221/"
         },
         {
-            "network" : "github",
+            "network": "github",
             "href": "https://github.com/kaushikar11"
         },
         {
-            "network" : "email",
+            "network": "email",
             "href": "mailto:kaushikar2211@gmail.com"
+        },
+        {
+            "network": "google-scholar",
+            "href": "https://scholar.google.com/citations?hl=en&user=qghXVakAAAAJ"
         }
     ]
 }
