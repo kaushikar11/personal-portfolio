@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { SocialIcon } from 'react-social-icons';
 import { ThemeContext } from 'styled-components';
-import { FaGraduationCap } from 'react-icons/fa'; // Import Google Scholar representation icon
+import { FaGraduationCap } from 'react-icons/fa'; // Importing FaGraduationCap for Google Scholar
 import endpoints from '../constants/endpoints';
 
 const styles = {
@@ -35,18 +35,23 @@ function Social() {
   return (
     <div className="social">
       {data
-        ? data.social.map((social) =>
-            social.network === 'google-scholar' ? (
+        ? data.social.map((social) => {
+          if (social.network === 'google-scholar') {
+            return (
               <a
-                key={social.network}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ textDecoration: 'none', color: theme.socialIconBgColor }}
-              >
-                <FaGraduationCap style={styles.customIconStyle} />
-              </a>
-            ) : (
+                  key={social.network}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: 'none', color: theme.socialIconBgColor }}
+                  aria-label="Google Scholar Profile"
+                >
+                  <FaGraduationCap style={styles.customIconStyle} />
+                </a>
+              );
+            }
+
+            return (
               <SocialIcon
                 key={social.network}
                 style={styles.iconStyle}
@@ -56,8 +61,8 @@ function Social() {
                 target="_blank"
                 rel="noopener"
               />
-            )
-          )
+            );
+          })
         : null}
     </div>
   );
