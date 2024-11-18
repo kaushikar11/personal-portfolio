@@ -1,16 +1,40 @@
 {
     "experiences": [
         {
+            "title": "02/2024 – Present",
+            "position": "Co-founder & Product/AI Engineer",
+            "subtitle": "Locallu",
+            "imageUrl": "images/projects/locallu-logo.png",
+            "url": "https://locallu.com/",
+            "workType": "Startup",
+            "workDescription": [
+                "Building the world's first multi-LLM interaction x human engine for a groundbreaking approach to AGI.",
+                "Developing a multi AI x human agent model for freelance solutions."
+            ]
+        },
+        {
+            "title": "07/2024 – Present",
+            "position": "Co-founder & Product eveloper",
+            "subtitle": "LegalAppa",
+            "imageUrl": "images/projects/legaldad.png",
+            "url": "https://legalappa.one/",
+            "workType": "Startup",
+            "workDescription": [
+                "Simplifying legal document preparation for everyone using LLMs.",
+                "Creating a live AI Jarvis-like assistant for legal document preparation for advocates from the High Court of Madras, Madurai."
+            ]
+        },
+        {
             "title": "12/2023 – 01/2024",
             "position": "Intern",
             "subtitle": "pi42.com",
             "imageUrl": "images/experiences/pi42.png",
-            "url":"https://pi42.com/",
+            "url": "https://pi42.com/",
             "workType": "Internship",
             "workDescription": [
                 "Developed an e-commerce website - Tweeshirt",
-                "the application utilizes generative Ai to create images from user's tweets",
-                "prints the generated images in T-shirts and delivers it to their homes"
+                "The application utilizes generative AI to create images from user's tweets",
+                "Prints the generated images in T-shirts and delivers them to their homes"
             ]
         },
         {
@@ -21,7 +45,7 @@
             "url": "https://kaartech.com/",
             "workType": "Internship",
             "workDescription": [
-                "Analysing and predicting seasonal sales data."
+                "Analyzing and predicting seasonal sales data."
             ]
         }
     ]
