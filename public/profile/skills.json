@@ -1,7 +1,32 @@
 {
     "intro": "I’m always excited to dive into new things and tinker with the latest tech.\nHere are some of the major languages, tools, and platforms I’ve worked with so far:",
-    "skills": [{
+    "skills": [
+        {
+            "title": "Certifications",
+            "items" : [
      
+                {
+                    "icon": "images/skills/AIF-C01-EA.png",
+                    "title": "AIF-C01-EA"
+                },
+                {
+                    "icon": "images/skills/AIF-C01.png",
+                    "title": "AIF-C01"
+                },
+                {
+                    "icon": "images/skills/MLA-C01-EA.png",
+                    "title": "MLA-C01-EA"
+                },
+                {
+                    "icon": "images/skills/MLA-C01.png",
+                    "title": "MLA-C01"
+                },
+                {
+                    "icon": "images/skills/AWS-ACAD-CA.png",
+                    "title": "AWS-ACAD-CA"
+                }
+        ]},
+        {
             "title": "Languages & Databases",
             "items" : [
      
@@ -20,10 +45,6 @@
                 {
                     "icon": "images/skills/python.png",
                     "title": "Python"
-                },
-                {
-                    "icon": "images/skills/mysql.png",
-                    "title": "MySQL"
                 },
                 {
                     "icon": "images/skills/css.png",
@@ -48,20 +69,16 @@
                 {
                     "icon": "images/skills/nodejs.png",
                     "title": "Nodejs"
-                },
-                {
-                    "icon": "images/skills/next-js.svg",
-                    "title": "Nextjs"
-                },
-                {
-                    "icon": "images/skills/bootstrap.svg",
-                    "title": "Bootstrap"
                 }
             ]
         },
         {
             "title" : "Tools & Platforms",
             "items": [
+                {
+                    "icon": "images/skills/aws.png",
+                    "title": "AWS"
+                },
                 {
                     "icon": "images/skills/git.png",
                     "title": "Git"
