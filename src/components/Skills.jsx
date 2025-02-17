@@ -18,7 +18,7 @@ const styles = {
   },
   skillSectionContainer: {
     margin: '20px 0',
-    padding: '20px',
+    padding: '10px',
     borderRadius: '10px',
     backgroundColor: 'transparent',
   },
@@ -28,15 +28,22 @@ const styles = {
     margin: 10,
     marginBottom: 0,
   },
+  largeIconStyle: {
+    height: 150,
+    width: 150,
+    margin: 1,
+    marginBottom: 0,
+  },
   skillTitle: {
     fontSize: '1.1em',
     fontWeight: 'bold',
     marginTop: '10px',
   },
   sectionTitle: {
-    fontSize: '1.5em',
-    fontWeight: '600',
+    fontSize: '2em',
+    fontWeight: 'bold',
     marginBottom: '20px',
+    textAlign: 'center',
   },
 };
 
@@ -45,7 +52,7 @@ function Skills(props) {
   const [data, setData] = useState(null);
   const [fadeIn, setFadeIn] = useState(false);
 
-  const renderSkillsIntro = (intro) => (
+  const renderIntro = (intro) => (
     <h4 style={styles.introTextContainer}>
       <ReactMarkdown children={intro} />
     </h4>
@@ -68,10 +75,20 @@ function Skills(props) {
         <Fade in={fadeIn}>
           <div className="section-content-container">
             <Container>
-              {renderSkillsIntro(data.intro)}
+              <h1 style={styles.sectionTitle}>CERTIFICATIONS</h1>
+              {renderIntro(data.certs_intro)}
+              <Row>
+                {data.Certifications[0].items.map((item) => (
+                  <Col key={item.title} xs={12} sm={6} md={4} lg={3} className="text-center">
+                    <img src={item.icon} alt={item.title} style={styles.largeIconStyle} />
+                  </Col>
+                ))}
+              </Row>
+              <h1 style={styles.sectionTitle}>SKILLS</h1>
+              {renderIntro(data.skills_intro)}
               {data.skills?.map((rows) => (
                 <div key={rows.title} className="skill-section" style={styles.skillSectionContainer}>
-                  <h3 style={styles.sectionTitle}>{rows.title}</h3>
+                  <h2 style={styles.sectionTitle}>{rows.title}</h2>
                   <Row>
                     {rows.items.map((item) => (
                       <Col key={item.title} xs={12} sm={6} md={4} lg={3}>
