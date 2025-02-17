@@ -1,5 +1,32 @@
 {
     "intro": "I’m always excited to dive into new things and tinker with the latest tech.\nHere are some of the major languages, tools, and platforms I’ve worked with so far:",
+    "Certifications":[
+        {
+            "title": "AWS",
+            "items" : [
+                {
+                    "icon": "images/skills/AIF-C01-EA.png",
+                    "title": "AIF-C01-EA"
+                },
+                {
+                    "icon": "images/skills/AIF-C01.png",
+                    "title": "AIF-C01"
+                },
+                {
+                    "icon": "images/skills/MLA-C01-EA.png",
+                    "title": "MLA-C01-EA"
+                },
+                {
+                    "icon": "images/skills/MLA-C01.png",
+                    "title": "MLA-C01"
+                },
+                {
+                    "icon": "images/skills/AWS-ACAD-CA.png",
+                    "title": "AWS-ACAD-CA"
+                }
+        ]}
+
+    ],
     "skills": [
         {
             "title": "Certifications",
