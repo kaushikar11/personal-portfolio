@@ -3,7 +3,7 @@
         {
             "image" : "images/publications/uav.jpg",
             "title": "small Unmanned Aerial Vehicles (sUAV) detection and classification using micro-doppler signatures*",
-            "bodyText": "*Submiited and under Review",
+            "bodyText": "*Submitted and under Review",
             "tags" : [
                 "Deep learning",
                 "AI",
@@ -19,7 +19,7 @@
         {
             "image" : "images/publications/uav-1.jpg",
             "title": "small Unmanned Aerial Vehicles (sUAV) detection and classification using RF-SpectroGRAM Power Spectrum",
-            "bodyText": "*Submiited and under Review",
+            "bodyText": "*Submitted and under Review",
             "tags" : [
                 "Deep learning",
                 "AI",
@@ -34,7 +34,7 @@
         },{
             "image" : "images/publications/herrai.jpg",
             "title": "Enabling Fairness in HER systems*",
-            "bodyText": "*Submiited and under Review",
+            "bodyText": "*Submitted and under Review",
             "tags" : [
                 "AI",
                 "XAI",
@@ -54,7 +54,7 @@
         {
             "image" : "images/publications/her.jpg",
             "title": "XAI in HER systems*",
-            "bodyText": "*Submiited and under Review",
+            "bodyText": "*Submitted and under Review",
             "tags" : [
                 "AI",
                 "XAI",
@@ -109,8 +109,8 @@
             ]
         },
         {
-            "image" : "images/publications/sna-covid.png",
-            "title": "Social Network Analysis of Covid-19 Tweets*",
+            "image" : "images/publications/solar.png",
+            "title": "Performance Analysis of Regression Models in Solar PV Forecasting",
             "bodyText": "Solar energy is increasingly becoming one of the promising sources of renewable energy for versatile purposes including residential and commercial applications. Forecasting of the power output of solar photovoltaic (PV) systems with high accuracy in the short term is of significant importance for production, delivery, and storage in the energy market. This work aims to produce reliable short-term forecasting using machine learning methods such as Linear Regression, Random Forest Regression, and Decision Tree Regression. Results show 99% percent accuracy for the proposed models. The work also detects faults and abnormalities occurring in Solar PV panels with the help of results thereby enhancing the production.",
             "links": [
                 {
@@ -145,8 +145,8 @@
             ]
         },
         {
-            "image" : "images/publications/herrai.jpg",
-            "title": "Enabling Accountability in HER systems*",
+            "image" : "images/publications/sna-covid.jpg",
+            "title": "Social Network Analysis of Covid-19 Tweets*",
             "bodyText": "*An ongoing research",
             "tags" : [
                 "Social Network Analysis",
