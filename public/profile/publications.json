@@ -1,25 +1,44 @@
 {
     "publications" : [
         {
-            "image" : "images/publications/solar.png",
-            "title": "Performance Analysis of Regression Models in Solar PV Forecasting",
-            "bodyText": "Solar energy is increasingly becoming one of the promising sources of renewable energy for versatile purposes including residential and commercial applications. Forecasting of the power output of solar photovoltaic (PV) systems with high accuracy in the short term is of significant importance for production, delivery, and storage in the energy market. This work aims to produce reliable short-term forecasting using machine learning methods such as Linear Regression, Random Forest Regression, and Decision Tree Regression. Results show 99% percent accuracy for the proposed models. The work also detects faults and abnormalities occurring in Solar PV panels with the help of results thereby enhancing the production.",
-            "links": [
-                {
-                    "text": "IEEE Xplore",
-                    "href": "https://ieeexplore.ieee.org/document/10134943"
-                },
-                {
-                    "text": "Research Gate",
-                    "href": "https://www.researchgate.net/publication/371237861_Performance_Analysis_of_Regression_Models_in_Solar_PV_Forecasting"
-                }
-            ],
+            "image" : "images/publications/uav.jpg",
+            "title": "small Unmanned Aerial Vehicles (sUAV) detection and classification using micro-doppler signatures*",
+            "bodyText": "*Submiited and under Review",
             "tags" : [
-                "Ai",
-                "ML",
-                "Solar",
-                "Forecasting",
-                "Data Analytics"
+                "Deep learning",
+                "AI",
+                "sUAV classification"
+            ],
+            "Co-authors" : [
+                {
+                    "name": "Dr.S.Padmavathi",
+                    "contactURL": "https://www.tce.edu/staff_profile/faculty/BECSE/spmcse.html"
+                }
+            ]
+        },
+        {
+            "image" : "images/publications/uav-1.jpg",
+            "title": "small Unmanned Aerial Vehicles (sUAV) detection and classification using RF-SpectroGRAM Power Spectrum",
+            "bodyText": "*Submiited and under Review",
+            "tags" : [
+                "Deep learning",
+                "AI",
+                "sUAV classification"
+            ],
+            "Co-authors" : [
+                {
+                    "name": "Dr.S.Padmavathi",
+                    "contactURL": "https://www.tce.edu/staff_profile/faculty/BECSE/spmcse.html"
+                }
+            ]
+        },{
+            "image" : "images/publications/herrai.jpg",
+            "title": "Enabling Fairness in HER systems*",
+            "bodyText": "*Submiited and under Review",
+            "tags" : [
+                "AI",
+                "XAI",
+                "HER Systems"
             ],
             "Co-authors" : [
                 {
@@ -30,10 +49,26 @@
                     "name": "Guru Charan K S",
                     "contactURL": "https://www.linkedin.com/in/guru-charan-48377b271/"
                 }
+            ]
+        },
+        {
+            "image" : "images/publications/her.jpg",
+            "title": "XAI in HER systems*",
+            "bodyText": "*Submiited and under Review",
+            "tags" : [
+                "AI",
+                "XAI",
+                "HER Systems"
             ],
-            "additionalInfo": [
-              "Presented at AISP'23, held in March 2023.",
-              "Published in IEEE in June 2023."
+            "Co-authors" : [
+                {
+                    "name": "Dr.S.Padmavathi",
+                    "contactURL": "https://www.tce.edu/staff_profile/faculty/BECSE/spmcse.html"
+                },
+                {
+                    "name": "Guru Charan K S",
+                    "contactURL": "https://www.linkedin.com/in/guru-charan-48377b271/"
+                }
             ]
         },
         {
@@ -74,13 +109,25 @@
             ]
         },
         {
-            "image" : "images/publications/her.jpg",
-            "title": "XAI in HER systems*",
-            "bodyText": "*An ongoing research",
+            "image" : "images/publications/sna-covid.png",
+            "title": "Social Network Analysis of Covid-19 Tweets*",
+            "bodyText": "Solar energy is increasingly becoming one of the promising sources of renewable energy for versatile purposes including residential and commercial applications. Forecasting of the power output of solar photovoltaic (PV) systems with high accuracy in the short term is of significant importance for production, delivery, and storage in the energy market. This work aims to produce reliable short-term forecasting using machine learning methods such as Linear Regression, Random Forest Regression, and Decision Tree Regression. Results show 99% percent accuracy for the proposed models. The work also detects faults and abnormalities occurring in Solar PV panels with the help of results thereby enhancing the production.",
+            "links": [
+                {
+                    "text": "IEEE Xplore",
+                    "href": "https://ieeexplore.ieee.org/document/10134943"
+                },
+                {
+                    "text": "Research Gate",
+                    "href": "https://www.researchgate.net/publication/371237861_Performance_Analysis_of_Regression_Models_in_Solar_PV_Forecasting"
+                }
+            ],
             "tags" : [
-                "AI",
-                "XAI",
-                "HER Systems"
+                "Ai",
+                "ML",
+                "Solar",
+                "Forecasting",
+                "Data Analytics"
             ],
             "Co-authors" : [
                 {
@@ -91,6 +138,10 @@
                     "name": "Guru Charan K S",
                     "contactURL": "https://www.linkedin.com/in/guru-charan-48377b271/"
                 }
+            ],
+            "additionalInfo": [
+              "Presented at AISP'23, held in March 2023.",
+              "Published in IEEE in June 2023."
             ]
         },
         {
@@ -98,18 +149,30 @@
             "title": "Enabling Accountability in HER systems*",
             "bodyText": "*An ongoing research",
             "tags" : [
-                "AI",
-                "XAI",
-                "HER Systems"
+                "Social Network Analysis",
+                "Covid-19",
+                "Machine Learning"
             ],
             "Co-authors" : [
                 {
-                    "name": "Dr.S.Padmavathi",
-                    "contactURL": "https://www.tce.edu/staff_profile/faculty/BECSE/spmcse.html"
+                    "name": "Dhiyaneshwar A",
+                    "contactURL": "https://www.linkedin.com/in/dhiyanesh-a-5b5877227/"
                 },
                 {
-                    "name": "Guru Charan K S",
-                    "contactURL": "https://www.linkedin.com/in/guru-charan-48377b271/"
+                    "name": "Gowsigan M",
+                    "contactURL": "https://www.linkedin.com/in/gowsigan-m-aa4206225/"
+                },
+                {
+                    "name": "Annaamalai U",
+                    "contactURL": "https://www.linkedin.com/in/annaamalai-u-7092a0225/"
+                },
+                {
+                    "name": "Abishek P",
+                    "contactURL": "https://www.linkedin.com/in/abishek-p-286352286/"
+                },
+                {
+                    "name": "Dr. R. Parkavi",
+                    "contactURL": "https://www.tce.edu/staff_profile/faculty/BTECHIT/rpit.html"
                 }
             ]
         }
